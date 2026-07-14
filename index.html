@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <title>Alt Trader – Free Channel</title>
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('D8VNRTJC77UEAKLA094G');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #F5A623; --gold-lt: #FFD07A; --gold-dk: #C47D0A;
+      --bg: #0A0A0F; --card-bg: #10101A;
+      --border: rgba(245,166,35,0.18);
+      --text: #E8E8F0; --muted: #8888A8; --tg: #2AABEE;
+    }
+
+    html, body {
+      min-height: 100%; font-family: 'DM Sans', sans-serif;
+      background: var(--bg); color: var(--text); overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 15% 20%, rgba(180,80,20,.22) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 75%, rgba(100,30,140,.28) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(245,166,35,.06) 0%, transparent 70%);
+    }
+
+    .bg-pattern { position: fixed; inset: 0; z-index: 0; opacity: .08; pointer-events: none; }
+    .particles  { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .particle   { position: absolute; opacity: 0; animation: floatUp linear infinite; color: var(--gold); }
+    @keyframes floatUp {
+      0%  { opacity: 0; transform: translateY(0) scale(.6); }
+      10% { opacity: .22; } 90% { opacity: .1; }
+      100%{ opacity: 0; transform: translateY(-110vh) scale(1.1); }
+    }
+
+    .page {
+      position: relative; z-index: 1; min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 40px 16px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: linear-gradient(160deg, rgba(22,22,36,.97), rgba(12,12,20,.98));
+      border: 1px solid var(--border); border-radius: 24px;
+      padding: 44px 40px 40px; max-width: 460px; width: 100%;
+      text-align: center;
+      box-shadow: 0 0 0 1px rgba(245,166,35,.06), 0 24px 80px rgba(0,0,0,.65);
+      animation: cardIn .7s cubic-bezier(.22,1,.36,1) both;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 60%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(245,166,35,.55), transparent);
+    }
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(28px) scale(.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ── Avatar ── */
+    .avatar-wrap { position: relative; width: 100px; height: 100px; margin: 0 auto 22px; }
+    .avatar-ring {
+      position: absolute; inset: -4px; border-radius: 50%;
+      background: conic-gradient(var(--gold) 0%,var(--gold-lt) 40%,transparent 60%,var(--gold) 100%);
+      animation: spin 6s linear infinite; z-index: 0;
+    }
+    .avatar-ring-inner { position: absolute; inset: 2px; border-radius: 50%; background: var(--card-bg); z-index: 1; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-img { position: relative; z-index: 2; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+    .avatar-placeholder {
+      position: relative; z-index: 2; width: 100%; height: 100%; border-radius: 50%;
+      background: linear-gradient(135deg,#1a1a2e,#0f0f1a);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne',sans-serif; font-weight: 800; font-size: 28px; color: var(--gold);
+    }
+
+    .brand { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; }
+    .brand-name { font-family: 'Syne',sans-serif; font-weight: 800; font-size: 26px; color: #fff; letter-spacing: -.5px; }
+    .verified { width: 22px; height: 22px; flex-shrink: 0; }
+
+    .sub-count {
+      font-size: 14px; font-weight: 500; color: var(--gold); margin-bottom: 18px;
+      display: flex; align-items: center; justify-content: center; gap: 5px;
+    }
+    .sub-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+
+    .divider { height: 1px; background: linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent); margin-bottom: 18px; }
+
+    .features { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
+    .feat-tag {
+      display: flex; align-items: center; gap: 5px;
+      background: rgba(245,166,35,.08); border: 1px solid rgba(245,166,35,.2);
+      border-radius: 100px; padding: 5px 12px; font-size: 12px; font-weight: 500; color: var(--gold-lt);
+    }
+
+    .desc { font-size: 14.5px; line-height: 1.65; color: #b0b0c8; margin-bottom: 28px; font-weight: 300; }
+
+    /* ── CTA Button (single element, no children — clean TikTok event target) ── */
+    .cta-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; padding: 17px 28px; border-radius: 100px; border: none; cursor: pointer;
+      font-family: 'Syne',sans-serif; font-weight: 700; font-size: 15px;
+      letter-spacing: .5px; text-transform: uppercase; color: #0a0a0a;
+      background: linear-gradient(135deg, var(--gold-lt) 0%, var(--gold) 50%, var(--gold-dk) 100%);
+      box-shadow: 0 4px 30px rgba(245,166,35,.4);
+      transition: transform .15s, box-shadow .15s, opacity .2s;
+    }
+    .cta-btn:hover  { transform: translateY(-2px) scale(1.01); box-shadow: 0 8px 40px rgba(245,166,35,.55); }
+    .cta-btn:active { transform: translateY(0) scale(.99); }
+    .cta-btn.loading { opacity: .8; pointer-events: none; cursor: wait; }
+
+    .disclaimer { font-size: 11px; color: var(--muted); line-height: 1.5; margin-top: 18px; }
+
+    @media(max-width:480px){
+      .card { padding: 36px 20px 30px; }
+      .brand-name { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<svg class="bg-pattern" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect x="12" y="20" width="3" height="40" rx="1" fill="none" stroke="#F5A623" stroke-width="0.6"/>
+      <rect x="10" y="28" width="7" height="16" rx="1" fill="none" stroke="#F5A623" stroke-width="0.6"/>
+      <polyline points="32,60 40,44 48,52 56,30 64,38" fill="none" stroke="#F5A623" stroke-width="0.7"/>
+      <circle cx="40" cy="62" r="6" fill="none" stroke="#F5A623" stroke-width="0.5"/>
+      <line x1="40" y1="56" x2="40" y2="50" stroke="#F5A623" stroke-width="0.5"/>
+      <line x1="34" y1="62" x2="28" y2="62" stroke="#F5A623" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+</svg>
+<div class="particles" id="particles"></div>
+
+<main class="page">
+  <div class="card">
+
+    <div class="avatar-wrap">
+      <div class="avatar-ring"></div>
+      <div class="avatar-ring-inner"></div>
+      <img class="avatar-img" id="avatar-img"
+        src="https://i.ibb.co/zh0GKzWg/VR8lrp-Sbi-Rtj-Pl36u-B34-Mfr-QA6-AZGg-Owe-n-F1-SPAq-Qe7u0-Btg-H1-Qxx-YJNa-CNkp-Qvuj-Ov-A5t-HNn3n-Nv-JK50p.jpg"
+        alt="Alt Trader"
+        onerror="this.style.display='none';document.getElementById('avatar-ph').style.display='flex';"
+      />
+      <div class="avatar-placeholder" id="avatar-ph" style="display:none;">AT</div>
+    </div>
+
+    <div class="brand">
+      <span class="brand-name">Alt Trader</span>
+      <svg class="verified" viewBox="0 0 22 22" fill="none">
+        <circle cx="11" cy="11" r="11" fill="#2AABEE"/>
+        <path d="M6 11.5L9.5 15L16 8" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="sub-count">
+      <span class="sub-dot"></span>
+      8,527 members
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="features">
+      <span class="feat-tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="1,9 4,5 7,7 11,2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Chart Analysis
+      </span>
+      <span class="feat-tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.4"/><line x1="6" y1="3.5" x2="6" y2="6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="6" cy="8" r="0.7" fill="currentColor"/></svg>
+        Market Psychology
+      </span>
+      <span class="feat-tag">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="3" width="10" height="7" rx="1.2" stroke="currentColor" stroke-width="1.3"/><path d="M4 3V2.5a2 2 0 0 1 4 0V3" stroke="currentColor" stroke-width="1.3"/></svg>
+        Free Education
+      </span>
+    </div>
+
+    <p class="desc">
+      Educational charts, analysis &amp; market psychology lessons.
+      <strong style="color:#e0e0f0;">Not a signals channel.</strong>
+      All content is for learning purposes only — not financial advice.
+    </p>
+
+    <button class="cta-btn" id="cta-btn" onclick="smartJoin()">JOIN FREE CHANNEL</button>
+
+    <p class="disclaimer">Not financial advice · Educational content only</p>
+  </div>
+</main>
+
+<script>
+/* ─────────────────────────────────────────────
+   CONFIG — edit only these values
+───────────────────────────────────────────── */
+var INVITE_HASH = 'B34wSIxKaQEzMWFk';   // hash part of t.me/+HASH
+
+/* ─────────────────────────────────────────────
+   URLs built from the hash
+   KEY INSIGHT:
+   • t.me          → blocked in Pakistan (Telegram IPs)
+   • web.telegram.org → runs on Cloudflare CDN → NOT blocked in Pakistan
+   So we route through Telegram Web for the bypass.
+───────────────────────────────────────────── */
+var DIRECT_URL   = 'https://t.me/+'    + INVITE_HASH;
+var TG_APP_URL   = 'tg://join?invite=' + INVITE_HASH;
+
+/* Telegram Web deep-link (Cloudflare CDN — accessible in Pakistan) */
+var TELEGRAM_WEB = 'https://web.telegram.org/k/#?tgaddr='
+                 + encodeURIComponent(TG_APP_URL);
+
+/* bot.php on your Hostinger server (optional — generates fresh invite links) */
+var BOT_ENDPOINT = 'bot.php';
+
+var BTN_DEFAULT_TEXT = 'JOIN FREE CHANNEL';
+var BTN_LOADING_TEXT = 'Opening Channel…';
+
+/* ─────────────────────────────────────────────
+   DETECT: Is t.me reachable from user's device?
+   Uses a 2.5s image probe against telegram.org
+   (same IP range as t.me).
+───────────────────────────────────────────── */
+function isTelegramReachable() {
+  return new Promise(function(resolve) {
+    var img = new Image();
+    var t   = setTimeout(function(){ img.src = ''; resolve(false); }, 2500);
+    img.onload  = function(){ clearTimeout(t); resolve(true);  };
+    img.onerror = function(){ clearTimeout(t); resolve(false); };
+    img.src = 'https://telegram.org/favicon.ico?cb=' + Date.now();
+  });
+}
+
+/* ─────────────────────────────────────────────
+   DETECT: Is this a mobile device?
+   Mobile = likely has Telegram app installed.
+───────────────────────────────────────────── */
+function isMobile() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
+
+/* ─────────────────────────────────────────────
+   FETCH a fresh invite link from bot.php
+   Falls back to DIRECT_URL if bot.php fails.
+───────────────────────────────────────────── */
+function getFreshInviteLink() {
+  return fetch(BOT_ENDPOINT)
+    .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+    .then(function(d){ return d.link || DIRECT_URL; })
+    .catch(function(){ return DIRECT_URL; });
+}
+
+/* ─────────────────────────────────────────────
+   MAIN: smartJoin()
+   Full decision tree:
+
+   Click
+    ├─ Fire TikTok Lead pixel
+    ├─ Show loading state
+    └─ Check if Telegram is reachable
+        ├─ YES (not blocked)
+        │   └─ Redirect to t.me/+ directly ✅
+        └─ NO (Pakistan / blocked)
+            ├─ MOBILE
+            │   ├─ Try tg:// deeplink (opens app if installed)
+            │   └─ After 1.2s → open Telegram Web (Cloudflare bypass)
+            └─ DESKTOP
+                └─ Open Telegram Web directly (Cloudflare bypass)
+
+   Telegram Web deep-link flow for the user:
+     1. web.telegram.org opens in browser (works — on Cloudflare)
+     2. User logs in with phone number once
+     3. Lands directly on the channel join screen
+     4. Taps "Join" — done ✅
+───────────────────────────────────────────── */
+function smartJoin() {
+  /* Step 1: Fire pixel before any navigation */
+  trackLead();
+
+  var btn = document.getElementById('cta-btn');
+  btn.classList.add('loading');
+  btn.textContent = BTN_LOADING_TEXT;
+
+  /* Step 2: Check connectivity */
+  isTelegramReachable().then(function(reachable) {
+
+    if (reachable) {
+      /*
+        ── DIRECT PATH ──
+        Telegram is accessible from this device/network.
+        Navigate straight to the invite link.
+      */
+      window.location.href = DIRECT_URL;
+
+    } else {
+      /*
+        ── BYPASS PATH ──
+        Telegram IPs are blocked (Pakistan ISPs).
+
+        Strategy: web.telegram.org is hosted on Cloudflare's
+        global CDN. Pakistan ISPs have NOT blocked Cloudflare
+        (it would break thousands of other sites). So we route
+        the user through Telegram Web which bypasses the block.
+
+        The deep-link ?tgaddr= parameter tells Telegram Web to
+        open the channel join dialog immediately after login.
+      */
+
+      if (isMobile()) {
+        /*
+          Mobile: try the native tg:// app scheme first.
+          If the user has Telegram installed with a proxy already
+          set, this will open directly. If not, it silently fails
+          and we fall through to Telegram Web after 1.2s.
+        */
+        try { window.location.href = TG_APP_URL; } catch(e) {}
+
+        setTimeout(function() {
+          /*
+            After 1.2s the native app either opened or didn't.
+            Either way, load Telegram Web as the reliable bypass.
+            On mobile this opens in the browser; the user logs in
+            with their phone number and lands on the join screen.
+          */
+          window.location.href = TELEGRAM_WEB;
+          btn.classList.remove('loading');
+          btn.textContent = BTN_DEFAULT_TEXT;
+        }, 1200);
+
+      } else {
+        /*
+          Desktop: go straight to Telegram Web bypass.
+          No app installed on desktop typically.
+        */
+        window.location.href = TELEGRAM_WEB;
+        btn.classList.remove('loading');
+        btn.textContent = BTN_DEFAULT_TEXT;
+      }
+    }
+  });
+}
+
+/* ─────────────────────────────────────────────
+   TIKTOK EVENTS
+───────────────────────────────────────────── */
+function trackLead() {
+  try {
+    if (window.ttq) ttq.track('Lead', {
+      content_name: 'Alt Trader Free Channel',
+      content_category: 'Trading Education',
+      content_type: 'product',
+      currency: 'USD', value: 0
+    });
+  } catch(e) {}
+}
+
+window.addEventListener('load', function() {
+  try {
+    if (window.ttq) ttq.track('ViewContent', {
+      content_name: 'Alt Trader Landing Page',
+      content_category: 'Trading Education',
+      content_type: 'product',
+      currency: 'USD', value: 0
+    });
+  } catch(e) {}
+});
+
+/* ─────────────────────────────────────────────
+   PARTICLES
+───────────────────────────────────────────── */
+(function() {
+  var c = document.getElementById('particles');
+  var icons = [
+    '<polyline points="2,14 6,8 10,11 14,4 18,7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>',
+    '<rect x="5" y="4" width="5" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/>',
+    '<circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/>',
+    '<line x1="2" y1="16" x2="6" y2="16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><line x1="2" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>'
+  ];
+  for (var i = 0; i < 18; i++) {
+    var el = document.createElement('div');
+    el.className = 'particle';
+    var s = 16 + Math.random() * 14;
+    el.innerHTML = '<svg width="'+s+'" height="'+s+'" viewBox="0 0 20 20">'+icons[i%icons.length]+'</svg>';
+    el.style.left = (Math.random()*100)+'vw';
+    el.style.bottom = '-60px';
+    el.style.animationDuration  = (18+Math.random()*22)+'s';
+    el.style.animationDelay     = (Math.random()*20)+'s';
+    c.appendChild(el);
+  }
+})();
+</script>
+</body>
+</html>
